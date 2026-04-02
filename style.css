@@ -1,0 +1,66 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+p {
+  margin: 0 0;
+  position: absolute;
+  font: 16px Verdana;
+  color: #eee;
+  height: 25px;
+  top: calc( 100vh - 30px );
+  text-shadow: 0 0 2px white;
+}
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+span {
+  font-size: 11px;
+}
+p > a:first-of-type {
+  font-size: 20px;
+}
+body {
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0010 0%, #2d0020 50%, #1a000d 100%);
+  animation: bgShift 15s ease-in-out infinite;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 20, 80, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(200, 0, 80, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 20%, rgba(255, 105, 160, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+  animation: glowShift 8s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+  0%, 100% {
+    background: linear-gradient(135deg, #1a0010 0%, #2d0020 50%, #1a000d 100%);
+  }
+  33% {
+    background: linear-gradient(135deg, #200015 0%, #35001a 50%, #200010 100%);
+  }
+  66% {
+    background: linear-gradient(135deg, #150010 0%, #280018 50%, #150008 100%);
+  }
+}
+
+@keyframes glowShift {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
